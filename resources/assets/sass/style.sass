@@ -1,0 +1,378 @@
+body
+  font-family: "Varela Round", sans-serif
+  margin: 0
+  padding: 0
+  //background: radial-gradient(#57bfc7, #45a6b3)
+
+.content
+  text-align: center
+
+.logo
+  margin: 0 40px 20px 0
+
+.links a
+  font-size: 1.25rem
+  text-decoration: none
+  color: white
+  margin: 10px
+
+.links > a
+  color: #636b6f
+  padding: 0 25px
+  font-size: 13px
+  font-weight: 600
+  letter-spacing: .1rem
+  text-decoration: none
+  text-transform: uppercase
+
+.admin-section-title, section.form_section
+  padding: 0 0 20px
+
+fieldset#title_mobile
+  text-align: left
+
+span.subfield
+  display: block
+  input
+    display: inline-block
+
+.mat-button-wrapper,.back--main
+  visibility: hidden
+  height: 0
+  width: 0
+  padding: 0
+  margin: 0
+  display: inline-block
+  background-color: #22a7f0
+  max-width: 150px
+  text-align: center
+  color: white
+  border-radius: 20px
+  border: 1px solid transparent
+  text-decoration: none
+  &.open
+    transition: all .5s
+    visibility: visible
+    height: auto
+    width: auto
+    padding: 10px 20px
+  &.send
+    background-color: #ec2764
+
+.mat-button-wrapper,.back--main
+  &:hover
+    background-color: #22a7f0
+    color: #fff
+    border: 1px solid #fff
+
+.back
+  padding: 15px 0
+  .back--main.open
+    margin: 0
+
+.wufoo
+  //min-height: 60vh
+  ul
+    padding: 0
+    display: -ms-flexbox
+    display: -webkit-flex
+    display: flex
+    .foli
+      list-style-type: none
+      text-align: left
+      padding: 15px
+      width: 100%
+      input#range,input[type="text"],input[type="url"],input[type="number"],select
+        height: 30px
+        background-color: white
+        border: none
+        padding: 5px
+        min-width: 250px
+        width: 100%
+      fieldset
+        margin-inline-start: 2px
+        margin-inline-end: 2px
+        padding-block-start: 0.35em
+        padding-inline-start: 0.75em
+        padding-inline-end: 0.75em
+        padding-block-end: 0.625em
+        border-width: 2px
+        border-style: groove
+        border-color: threedface
+        border-image: initial
+
+.small,small,input#expire_date
+  width: 100%
+
+span.subfield
+  input.checkbox
+    display: none
+
+label.choice:before
+  content: ""
+  background-color: white
+  width: 30px
+  height: 30px
+  border: none
+  display: inline-block
+  text-align: center
+  line-height: 30px
+
+input[type=checkbox]:checked + label.choice:before
+  content: "\2714"
+  color: #ec2764
+  font-size: 2rem
+
+label.choice
+  height: 30px
+
+span.choice__text
+  line-height: 30px
+  vertical-align: top
+
+#title_links div>div
+  padding: 5px 0
+  label
+    min-width: 100px
+    display: inline-block
+
+.step_2
+  fieldset
+    width: 50%
+
+.column_vert_block
+  display: -ms-flexbox
+  display: -webkit-flex
+  display: flex
+  flex-direction: column
+
+.nav_bar
+  display: -ms-flexbox
+  display: -webkit-flex
+  display: flex
+  -webkit-justify-content: center
+  justify-content: center
+
+.nav_pages
+  align-self: center
+
+#object_type
+  width: 100%
+
+.desc
+  color: white
+  font-size: 1.5rem
+
+.main_part
+  -webkit-justify-content: center
+  justify-content: center
+  display: -ms-flexbox
+  display: -webkit-flex
+  display: flex
+  flex-direction: column
+  height: calc(100vh - 55px)
+
+.card
+  background-color: #4bafbb
+
+.charts
+  display: -ms-flexbox
+  display: -webkit-flex
+  display: flex
+
+.chartjs-size-monitor
+  width: inherit
+
+.canvas_1,.canvas_2
+  width: 50%
+
+.select_template
+  width: 100%
+  border: none
+  color: white
+  background-color: #6b757d
+
+.unsubscribe_block
+  background-image: url(/images/BG.png)
+  background-position: center
+  background-repeat: no-repeat
+  background-size: cover
+  min-height: 100vh
+  display: -ms-flexbox
+  display: -webkit-flex
+  display: flex
+  align-items: center
+  h1
+    padding: 0
+    margin: 0
+  h1,a,p,button
+    color: white
+    text-decoration: none
+  p
+    margin: 0
+  .unsubscribed_button
+    border: none
+    outline: none
+    display: inline-block
+    margin: 0 auto
+    padding: 20px 0 45px 0
+    background: transparent
+    span
+      color: #20BEC6
+      cursor: pointer
+  .stay_subscribe
+    border-radius: 38px
+    background-color: #20BEC6
+    height: 50px
+    font-size: 16px
+    line-height: 50px
+    display: block
+    max-width: 285px
+    padding: 0 45px
+    margin: 0 auto
+    &:hover
+      background-color: #eb938d
+  .logo_subscribe
+    padding: 55px 0 35px 0
+  .letter_part,.question_part
+    border-radius: 5px
+  .letter_part
+    display: -ms-flexbox
+    display: -webkit-flex
+    display: flex
+    justify-content: center
+    height: auto
+    background: linear-gradient(to right,#15394C 0%,#020C13 98.34%)
+    border-top-right-radius: 0
+    border-bottom-right-radius: 0
+    svg
+      align-self: center
+  .question_part
+    background-color: #15394C
+    border-top-left-radius: 0
+    border-bottom-left-radius: 0
+  .p_subscribe
+    padding: 25px 50px
+    p
+      padding: 0 0 10px 0
+  .unsubscribe
+    &>span
+      color: white
+
+.utm-block
+  padding: 25px 0 0
+  display: -ms-flexbox
+  display: -webkit-flex
+  display: flex
+  -webkit-justify-content: space-between
+  justify-content: space-between
+  -webkit-align-items: center
+  align-items: center
+  &>span
+    display: inline-block
+
+.submit_div
+  .submit,.interface
+    border-radius: 38px
+    background-color: #007bff
+    line-height: 50px
+    padding: 0 45px
+    border: none
+    outline: none
+    color: white
+    transform: translateY(15px)
+
+.test_mail
+  float: right
+  label
+    margin: 5px 0
+    border-radius: 38px
+    background-color: #007bff
+    line-height: 50px
+    width: 100%
+    min-width: 200px
+    border: none
+    outline: none
+    color: white
+    cursor: pointer
+
+.test_mail--email
+    width: 100%
+    height: calc(1.5em + .75rem + 2px)
+    padding: .375rem .75rem
+    font-size: 1rem
+    font-weight: 400
+    line-height: 1.5
+    color: #495057
+    background-color: #fff
+    background-clip: padding-box
+    border: 1px solid #ced4da
+    border-radius: .25rem
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out
+    margin-left: 10px
+
+.test_mail--checkbox,.test_mail--email
+  display: none
+
+@media all and (max-width: 992px)
+  .unsubscribe_block
+    .stay_subscribe
+      max-width: 80%
+    .parent_block
+      flex-direction: column
+    .letter_part
+      border-top-right-radius: 5px
+      border-bottom-left-radius: 0
+      border-bottom-right-radius: 0
+      svg
+        margin: 0 auto
+        height: 150px
+    .question_part
+      border-bottom-left-radius: 5px
+      border-top-left-radius: 0
+      border-top-right-radius: 0
+
+@media all and (max-width: 500px)
+  .links
+    display: -ms-flexbox
+    display: -webkit-flex
+    display: flex
+    flex-direction: column
+
+@media all and (max-width: 425px)
+  .unsubscribe_block
+    h1
+      font-size: 1.5rem
+    .logo_subscribe
+      padding: 25px 0 15px 0
+      img
+        width: 70%
+    .letter_part
+      svg
+        height: 75px
+    .stay_subscribe
+      font-size: 14px
+      max-width: 90%
+    .p_subscribe
+      padding: 5px 0 15px 0
+      p
+        padding: 0 0 5px 0
+    .unsubscribed_button
+      background: transparent
+
+@media all and (max-width: 375px)
+  .unsubscribe_block
+    h1
+      font-size: 1.25rem
+    .stay_subscribe
+      font-size: 12px
+      max-width: 95%
+
+@media all and (max-width: 320px)
+  .unsubscribe_block
+    .p_subscribe
+      p
+        font-size: 14px
+    .stay_subscribe
+      font-size: 12px
+      max-width: 100%
