@@ -6,6 +6,7 @@
 /.idea
 /.vscode
 /.vagrant
+/geoguide
 package.json
 composer.json
 Homestead.json
