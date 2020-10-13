@@ -11,19 +11,27 @@
     }
 </style>
 <template>
-    <transition name="fade">
+    <!-- <transition name="fade">
         <router-view></router-view>
-    </transition>
+    </transition> -->
+    <div>
+        <main-component></main-component>
+    </div>
 </template>
 <script>
     import Particle from "particleground-light";
-    import 'bootstrap/dist/css/bootstrap.css'
-    import 'bootstrap-vue/dist/bootstrap-vue.css'
+    //import MainComponent from './MainComponent.vue';
+    import 'bootstrap/dist/css/bootstrap.css';
+    import 'bootstrap-vue/dist/bootstrap-vue.css';
 
     export default {
         name: 'App',
         mounted() {
             this.update();
+        },
+        components: {
+            Particle
+            //'main-component': MainComponent
         },
         methods: {
             update: function(){

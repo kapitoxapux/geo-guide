@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Zadacha extends Model
 {
-  	public $timestamps=false;
+  	//public $timestamps=false;
   	protected $table='modx_site_content';
     protected $fillable=[
         'pagetitle',
@@ -19,4 +19,9 @@ class Zadacha extends Model
         'content',
         'menuindex'
     ];
+
+    public function image()
+    {
+        return $this->hasOne('App\Images','zadacha_id');
+    }
 }
