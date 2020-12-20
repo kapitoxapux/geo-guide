@@ -3,10 +3,9 @@
 </style>
 <template>
     <div>
-        <nav-component></nav-component>
         <main>
-            <div class="main">
-                <article class="zadacha" :for="(zadacha,i) in zadachas" :id="zadacha.id" @click="routeZadacha">
+            <!-- <div class="main" v-if="zadachas"> -->
+                <article :for="(zadacha,i) in collection" :key='i' :id="zadacha.id" @click="routeZadacha">
                     <div class="zadacha_1">
                         <div class="part_1">
                             <ul class="uslovia">
@@ -20,37 +19,34 @@
                         </div>
                     </div>
                 </article>
-            </div>
+            <!-- </div>
+            <div class="main" v-else>
+                <loading :active.sync="isLoading" :is-full-page="fullPage"></loading>
+            </div> -->
         </main>
-        <footer class="footer">
-            <div class="mini-footer-content">© <a href="https://kapx-portfolio.tmweb.ru/" target="_blank">Powered by Kapx</a>, 2014</div>
-            <div class="mini-footer-content-vk">
-                <div>
-                    <a href="https://vk.com/club83059811" target="blank" title="Я Вконтакте">VK</a>
-                </div>
-            </div>
-        </footer>
     </div>
 </template>
 
 <script>
-    import Nav from "./NavComponent";
+    import Loading from 'vue-loading-overlay';
+    import 'vue-loading-overlay/dist/vue-loading.css';
 
     export default {
         data: function(){
             return {
-                'message_type': 'Фильм'
+                //collection: null,
+                isLoading: false,
+                fullPage: true
             }
         },
-        computed: {
-            zadachas: {}
+        /* computed: {
+            zadachas: this.collection
+        }, */
+        props: {
+            collection: String
         },
-        props: [
-            //'push_id',
-            //'genres'
-        ],
         components: {
-            'nav-component': Nav
+            Loading
         },
         mounted() {
             this.update();
@@ -58,7 +54,9 @@
         methods: {
             update: function(){
                 console.log('GeodesyComponent mounted!');
-                this.$root.$options.methods.postRequest(
+                //this.isLoading = true;
+
+                /* this.postRequest(
                     '/zadacha',
                     {
                         'parent': 2,
@@ -70,10 +68,54 @@
                     ).then(
                         (myJson) =>
                         {
+                            //console.dir(this.collection);
                             if(myJson.exception==='ErrorException') console.dir(myJson);
-                            else this.zadachas=myJson;
+                            else this.collection=myJson;
+                            this.isLoading = false;
                         }
-                    );
+                    ); */
+            },
+            postRequest: function(link,data){
+                const myHeaders=new Headers(
+                    {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json',
+                        'X-CSRF-TOKEN': document.querySelector("meta[name='csrf-token']").getAttribute("content")
+                    }
+                );
+
+                let myInit={
+                    method: 'POST',
+                    headers: myHeaders,
+                    body: JSON.stringify(data),
+                    credentials: 'same-origin',
+                    mode: 'cors',
+                    cache: 'no-cache'
+                };
+                return new Promise(
+                    (resolve,reject)=>{
+                        fetch(link,myInit)
+                            .then(
+                                function(response)
+                                {
+                                    if(response.ok)
+                                    {
+                                        resolve({
+                                                status: 'OK',
+                                                body: response.json()
+                                            }
+                                        )
+                                    } else {
+                                        reject({
+                                                status: 'Failed',
+                                                message: 'Data Error!'
+                                            }
+                                        )
+                                    }
+                                }
+                            );
+                    }
+                );
             },
             routeZadacha: function(){
                 console.dir();
