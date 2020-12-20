@@ -17,9 +17,9 @@ class ZadachaController extends Controller
      */
     public function index(int $id)
     {
-        $zadacha=Zadacha::findOrFail($id);
+        //$zadacha=Zadacha::findOrFail($id);
         //dd($zadacha);
-        return view('zadacha',compact('zadacha'));
+        //return view('zadacha',compact('zadacha'));
     }
 
     /**
@@ -108,6 +108,55 @@ class ZadachaController extends Controller
         $collection=Zadacha::where('parent',4)->paginate(15);
         //dd($collection);
         return view('hydraulics',compact('collection'));
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function geodesy_id(int  $id)
+    {
+        $zadacha=Zadacha::where('parent',2)
+            ->where('id',$id)
+            ->first();
+        if($zadacha) return view('zadacha',compact('zadacha'));
+        else return redirect('404');
+        //else abort(404, 'Oooops....');
+
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function geology_id(int  $id)
+    {
+        $zadacha=Zadacha::where('parent',3)
+            ->where('id',$id)
+            ->first();
+        if($zadacha) return view('zadacha',compact('zadacha'));
+        else return redirect('404');
+        //else abort(404, 'Oooops....');
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function hydraulics_id(int  $id)
+    {
+        $zadacha=Zadacha::where('parent',4)
+            ->where('id',$id)
+            ->first();
+        if($zadacha) return view('zadacha',compact('zadacha'));
+        else return redirect('404');
+        //else abort(404, 'Oooops....');
     }
 
     public function basket()

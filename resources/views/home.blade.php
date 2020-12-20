@@ -13,6 +13,10 @@
         .collection_row:hover {
             background-color: tomato;
         }
+        .modal_image {
+            width: 100%;
+            height: auto;
+        }
     </style>
 @endsection
 
@@ -35,6 +39,11 @@
                                     <div id="set_image_{{$row->id}}" class="modal" tabindex="-1" role="dialog">
                                         <div class="modal-dialog" role="document">
                                             <div class="modal-content">
+                                                @if($row->image)
+                                                    <img src="/storage/{{$row->image->path}}" class="modal_image" alt="image_{{$row->id}}">
+                                                @else
+                                                    <img src="#" alt="no image yet">
+                                                @endif
                                                 <form method="POST" action="{{route('image')}}" enctype="multipart/form-data">
                                                     @csrf
                                                     <input type="hidden" name="id" value="{{$row->id}}">

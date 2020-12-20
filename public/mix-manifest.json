@@ -1,9 +1,3 @@
 {
-    "/js/app.js": "/js/app.js",
-    "/js/geodesy.js": "/js/geodesy.js",
-    "/js/login.js": "/js/login.js",
-    "/css/main.css": "/css/main.css",
-    "/css/mobile.css": "/css/mobile.css",
-    "/css/slick.css": "/css/slick.css",
-    "/js/slick.js": "/js/slick.js"
+    "/css/main.css": "/css/main.css"
 }

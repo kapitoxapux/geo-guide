@@ -7,6 +7,12 @@
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
+    <url>
+        <loc>https://geo-guide.ru/404</loc>
+        <lastmod>2020-10-08T00:00:00+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
   	<url>
         <loc>https://geo-guide.ru/geodesy</loc>
         <lastmod>2020-10-08T00:00:00+00:00</lastmod>
@@ -33,18 +39,18 @@
             <priority>0.8</priority>
         </url>
     @endforeach
-    @foreach($geology as $row)
+    @foreach($geology as $row1)
         <url>
-            <loc>https://geo-guide.ru/geology/{{$row->id}}</loc>
-            <lastmod>{{\Carbon\Carbon::parse($row->updated_at)->tz('GMT')->toAtomString()}}</lastmod>
+            <loc>https://geo-guide.ru/geology/{{$row1->id}}</loc>
+            <lastmod>{{\Carbon\Carbon::parse($row1->updated_at)->tz('GMT')->toAtomString()}}</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.8</priority>
         </url>
     @endforeach
-    @foreach($hydraulics as $row)
+    @foreach($hydraulics as $row2)
         <url>
-            <loc>https://geo-guide.ru/hydraulics/{{$row->id}}</loc>
-            <lastmod>{{\Carbon\Carbon::parse($row->updated_at)->tz('GMT')->toAtomString()}}</lastmod>
+            <loc>https://geo-guide.ru/hydraulics/{{$row2->id}}</loc>
+            <lastmod>{{\Carbon\Carbon::parse($row2->updated_at)->tz('GMT')->toAtomString()}}</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.8</priority>
         </url>

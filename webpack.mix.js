@@ -11,10 +11,10 @@ let mix = require('laravel-mix');
  |
  */
 
-mix.sass('resources/assets/sass/main.sass', 'public/css')
-    .sass('resources/assets/sass/mobile.sass', 'public/css')
-    .sass('resources/assets/sass/slick.sass', 'public/css')
-    .js('resources/assets/js/login.js', 'public/js')
-    .js('resources/assets/js/app.js', 'public/js')
-    .js('resources/assets/js/slick.js', 'public/js');
+mix.sass('resources/assets/sass/main.sass', 'public/css');
+    //.sass('resources/assets/sass/mobile.sass', 'public/css')
+    //.sass('resources/assets/sass/slick.sass', 'public/css')
+    //.js('resources/assets/js/login.js', 'public/js')
+    //.js('resources/assets/js/app.js', 'public/js')
+    //.js('resources/assets/js/slick.js', 'public/js');
     //.js('resources/assets/js/geodesy.js', 'public/js');
